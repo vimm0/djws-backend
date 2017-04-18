@@ -37,7 +37,7 @@ padding-right: 10px;
     </div> -->
     <div class="panel panel-default" style="border:0;">
         <div class="panel-body">
-            <h3 style="font-size: 18px;">Recent Post</h3>
+            <h3 style="font-size: 18px;" class="text-center">Recent Post</h3>
             <div class="list-group">
                 {% for post in recent_post%}
                     <button type="button" class="list-group-item">{{ post }}</button>
@@ -45,43 +45,48 @@ padding-right: 10px;
             </div>
         </div>
     </div>
-    <div class="text-center">
-        <p style="font-size: 13px;font-family: 'Raleway', sans-serif;">Contribute on github or download source code and have fun.<p>
-            <a class="github-button" href="https://github.com/vimm0/spring_exercise/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/vimm0/spring_exercise/network" data-count-api="/repos/vimm0/spring_exercise#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vimm0/spring_exercise on GitHub">Fork</a>
-            <a class="github-button" href="https://github.com/vimm0/spring_exercise" data-icon="octicon-star" data-style="mega" data-count-href="/vimm0/spring_exercise/stargazers" data-count-api="/repos/vimm0/spring_exercise#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vimm0/spring_exercise on GitHub">Star</a>
-        </div>
-        <div class="panel panel-default" style="border:0;">
-            <div class="panel-body">
-                <h3 style="font-size: 18px;">Recent Comments</h3>
-                <ul class="custom-bullet" style="list-style:none;">
-                    {% for comment in recent_comment %}
-                        <li class="dsq-widget-item">
-                            <a href="#"><img class="dsq-widget-avatar" src="https://yoast-mercury.s3.amazonaws.com/uploads/2015/09/Avatar_Joost_500x500.png" class="img-responsive" alt="No Internet" height="52" width="52" data-pin-nopin="true">
-                            </a>
-                            <a class="dsq-widget-user" href="#">{{ comment }}</a>
-                            <span class="dsq-widget-comment"><p>{{ comment.content }}</p></span>
-                            <p class="dsq-widget-meta">
-                                <a href="#">{{ comment.content_object }}</a>&nbsp;·&nbsp;
-                                <a href="#">{{ comment.timestamp }}</a>&nbsp;·&nbsp;<a href="#">100 views</a></p>
-                            </li>
-                        {% endfor  %}
-                    </ul>
-                </div>
-            </div>
-            <!-- </div> -->
-            <div class="panel panel-default" style="border:0;">
-                <div class="panel-body" >
-                    <h3 style="font-size: 18px;">Popular Tags</h3>
-                    <ul class="list-group" style="margin-right:20%;list-style:none;">
-                        {% for tag in t %}
-                            <li><a class="btn btn-default btn-block" style="color:#333; border-radius: 2px;margin-left: 12%;">      {{ tag }}<span class="badge badge-default badge-pill pull-right">6</span></a>
+    <div class="text-center" style="">
+        <p style="font-size: 13px;font-family: 'Raleway', sans-serif; ">Contribute on github or download source code and have fun.</p>
+        <a class="github-button" href="https://github.com/vimm0/spring_exercise/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/vimm0/spring_exercise/network" data-count-api="/repos/vimm0/spring_exercise#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vimm0/spring_exercise on GitHub">Fork</a>
+        <a class="github-button" href="https://github.com/vimm0/spring_exercise" data-icon="octicon-star" data-style="mega" data-count-href="/vimm0/spring_exercise/stargazers" data-count-api="/repos/vimm0/spring_exercise#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vimm0/spring_exercise on GitHub">Star</a>
+    </div>
+    <div class="panel panel-default" style="border:0;">
+        <div class="panel-body">
+            <h3 style="font-size: 18px;" class="text-center">Recent Comments</h3>
+                        <hr>
+
+            <ul class="custom-bullet" style="list-style:none;">
+                {% for comment in recent_comment %}
+                    <li class="dsq-widget-item">
+                        <a href="#"><img class="dsq-widget-avatar" src="https://yoast-mercury.s3.amazonaws.com/uploads/2015/09/Avatar_Joost_500x500.png" class="img-responsive" alt="No Internet" height="52" width="52" data-pin-nopin="true">
+                        </a>
+                        <a class="dsq-widget-user" href="#">{{ comment }}</a>
+                        <span class="dsq-widget-comment"><p>{{ comment.content }}</p></span>
+                        <p class="dsq-widget-meta">
+                            <a href="#">{{ comment.content_object }}</a>&nbsp;·&nbsp;
+                            <a href="#">{{ comment.timestamp }}</a>&nbsp;·&nbsp;<a href="#">100 views</a></p>
                         </li>
-                    {% endfor %}
-                    
+                    {% endfor  %}
+
                 </ul>
+                                                            <hr>
+
             </div>
+        </div>
+        <!-- </div> -->
+        <div class="panel panel-default" style="border:0;">
+            <div class="panel-body" >
+                <h3 style="font-size: 18px;" class="text-center">Popular Tags</h3>
+                <ul class="list-group" style="margin-right:20%;list-style:none;">
+                    {% for tag in t %}
+                        <li><a class="btn btn-default btn-block" style="color:#333; border-radius: 2px;margin-left: 12%;">      {{ tag }}<span class="badge badge-default badge-pill pull-right">6</span></a>
+                    </li>
+                {% endfor %}
+                
+            </ul>
         </div>
     </div>
+</div>
 </p></p>
 </div>
 <!--Sidebar content-->
