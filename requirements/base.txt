@@ -1,0 +1,26 @@
+Django==1.9
+django-crispy-forms==1.6.0
+django-markdown-deux==1.0.5
+django-pagedown==0.1.1
+#this one is for postgres in heroku but i was unable to do that
+dj-database-url==0.4.2
+markdown2==2.3.1
+Pillow==3.1.0
+#for tagging freature
+django-taggit==0.22.0
+#for testing required in production
+whitenoise==3.3.0
+
+
+#Not dependency but information
+#for server also unable to implement saved for lateruse
+gunicorn==19.6.0
+#required in heroku
+#this is dependency is for future database
+#postgres==2.2.1
+#psycopg2==2.6.2
+#default virtual envs in my system
+#appdirs==1.4.2
+#packaging==16.8
+#pyparsing==2.1.10
+#six==1.10.0

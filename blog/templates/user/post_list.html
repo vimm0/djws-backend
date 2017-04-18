@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% block dcontent %}
+<h1>{{ title }}</h1>
+    <form method='GET' action='' class='row'>
+        <div class='col-sm-8'>
+            <div id="custom-search-input">
+                <div class="input-group">
+                    <input type="text" class="search-query form-control" type='text' name='q' placeholder="Search"  value='{{ request.GET.q }}'/>
+                    <!-- <span class="input-group-btn">
+                        <button class="form-control" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span> -->
+                    <span class="input-group-btn">
+                        <button class="btn btn-round btn-default" type="button">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    {% for obj in object_list %}
+        {% if obj.image %}
+            <img src='{{ obj.image.url }}' class='img-responsive' />
+        {% endif %}
+        {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}
+        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3>
+        {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
+        {{ obj.get_markdown|truncatechars_html:120 }}
+        
+        <button type="button"  class="btn btn-default btn-round-sm btn-sm" ><a href="{{ obj.get_absolute_url }}" >view</a></button>
+        <hr/>
+    {% endfor %}
+    <!-- pagination -->
+    <div class="text-center">
+        <div class="pagination">
+            <nav class="pager" aria-label="...">
+                <ul class="pager">
+                    <span class="step-links">
+                        {% if object_list.has_previous %}
+                            <li><a type="button" class="btn btn-default" href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Newer</a></li>
+                        {% endif %}
+                        {% if object_list.has_next %}
+                            <li><a type="button" class="btn btn-default" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Older</a></li>
+                        {% endif %}
+                    </span>
+                </ul>
+            </div>
+        </div>
+        
+    {% endblock dcontent %}

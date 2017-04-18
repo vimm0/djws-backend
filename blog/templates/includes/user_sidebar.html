@@ -1,0 +1,84 @@
+<!--Sidebar content-->
+<style>
+.btn-round-lg{
+border-radius: 22.5px;
+}
+.btn-round{
+border-radius: 17px;
+}
+.btn-round-sm{
+border-radius: 15px;
+}
+.btn-round-xs{
+border-radius: 11px;
+padding-left: 10px;
+padding-right: 10px;
+}
+</style>
+<div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+    <div class="panel-body">
+        <h3 style="font-size: 18px;"><img src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-python-icon.png" height="28" width="28" /> Python Learning</h3>
+        <blockquote>
+            <p style="font-weight:100;">"Python has been an important part of Google since the beginning, and remains so as the system grows and evolves. Today dozens of Google engineers use Python, and we're looking for more people with skills in this language."</p>
+        <footer> said <cite title="Source Title"> Peter Norvig, director of search quality at Google, Inc.  </cite></footer>
+    </blockquote>
+    
+    <hr>
+    <div class="text-center">
+        <p style="font-size: 13px;font-family: 'Raleway', sans-serif;">Contribute this blog on github or download source code and have fun.<p>
+            <a class="github-button" href="https://github.com/vimm0/spring_exercise/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/vimm0/spring_exercise/network" data-count-api="/repos/vimm0/spring_exercise#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vimm0/spring_exercise on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/vimm0/spring_exercise" data-icon="octicon-star" data-style="mega" data-count-href="/vimm0/spring_exercise/stargazers" data-count-api="/repos/vimm0/spring_exercise#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vimm0/spring_exercise on GitHub">Star</a>   </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+        <div class="author panel-body" style="text-align: center;">
+            <p style="font-size: 13px;font-family: 'Raleway', sans-serif;">Do you want to post anything?</p>
+            <button type="submit" class="btn btn-default btn-round-lg btn-lg">
+            Join as Author
+            </button>
+        </div>
+    </div>
+    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+        <div class="panel-body">
+            <h3 style="font-size: 18px;">Recent Post</h3>
+            <div class="list-group">
+                {% for post in recent_post%}
+                    <button type="button" class="list-group-item">{{ post }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+        <div class="panel-body">
+            <h3 style="font-size: 18px;">Recent Comments</h3>
+            <ul class="custom-bullet" style="list-style:none;">
+                {% for comment in recent_comment %}
+                    <li class="dsq-widget-item">
+                        <a href="#"><img class="dsq-widget-avatar" src="https://yoast-mercury.s3.amazonaws.com/uploads/2015/09/Avatar_Joost_500x500.png" class="img-responsive" alt="No Internet" height="52" width="52" data-pin-nopin="true">
+                        </a>
+                        <a class="dsq-widget-user" href="#">{{ comment }}</a>
+                        <span class="dsq-widget-comment"><p>{{ comment.content }}</p></span>
+                        <p class="dsq-widget-meta">
+                            <a href="#">{{ comment.content_object }}</a>&nbsp;·&nbsp;
+                            <a href="#">{{ comment.timestamp }}</a>&nbsp;·&nbsp;<a href="#">100 views</a></p>
+                        </li>
+                    {% endfor  %}
+                </ul>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+            <div class="panel-body" >
+                <h3 style="font-size: 18px;">Popular Tags</h3>
+                    <ul class="list-group" style="margin-right:20%;list-style:none;">
+                                    {% for tag in t %}
+                        <li><a class="btn btn-default btn-block" style="color:#333; border-radius: 2px;margin-left: 12%;">      {{ tag }}<span class="badge badge-default badge-pill pull-right">6</span></a>
+                        </li>
+                        {% endfor %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sidebar content-->

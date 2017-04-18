@@ -1,0 +1,23 @@
+maximum recursion depth exceeded in __instancecheck__
+	This is a type of problem which arises when we call function from same function.
+
+NoReverseMatch at /
+Reverse for 'login' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+	When problem with in a url,view and templates part.
+
+sudo npm install gulp -g
+  -g means to install gulp globally
+
+npm init
+	package.json file is created
+npm install gulp --save-dev
+
+sass install
+
+export PATH=$PATH':/root/.gem/ruby/2.4.0/bin'
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$HOME/.gem
+gem install bundler
+gem list
+gem env
+gem rail
