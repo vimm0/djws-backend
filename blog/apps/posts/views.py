@@ -138,6 +138,8 @@ def post_detail(request, slug=None):
 	t = Tag.objects.all().order_by('-id')[:4]#for sidbar top tag
 	# print(t)
 	tag = instance.tags.all()
+	
+
 	num_tags = tag.count()
 	print(tag.count())
 	# tag = instance
