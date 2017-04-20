@@ -1,4 +1,3 @@
-<!--Sidebar content-->
 <style>
 .btn-round-lg{
 border-radius: 22.5px;
@@ -13,34 +12,16 @@ border-radius: 15px;
 border-radius: 11px;
 padding-left: 10px;
 padding-right: 10px;
+
+}
+.yo{
+box-shadow: 1px -1px 9px 2px rgba(211, 211, 211, 0.2), 1px 1px 17px 2px rgba(93, 76, 76, 0.19);
 }
 </style>
-<div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
-    <div class="panel-body">
-        <h3 style="font-size: 18px;"><img src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-python-icon.png" height="28" width="28" /> Python Learning</h3>
-        <blockquote>
-            <p style="font-weight:100;">"Python has been an important part of Google since the beginning, and remains so as the system grows and evolves. Today dozens of Google engineers use Python, and we're looking for more people with skills in this language."</p>
-        <footer> said <cite title="Source Title"> Peter Norvig, director of search quality at Google, Inc.  </cite></footer>
-    </blockquote>
-    
-    <hr>
-    <div class="text-center">
-        <p style="font-size: 13px;font-family: 'Raleway', sans-serif;">Contribute this blog on github or download source code and have fun.<p>
-            <a class="github-button" href="https://github.com/vimm0/spring_exercise/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/vimm0/spring_exercise/network" data-count-api="/repos/vimm0/spring_exercise#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vimm0/spring_exercise on GitHub">Fork</a>
-            <a class="github-button" href="https://github.com/vimm0/spring_exercise" data-icon="octicon-star" data-style="mega" data-count-href="/vimm0/spring_exercise/stargazers" data-count-api="/repos/vimm0/spring_exercise#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vimm0/spring_exercise on GitHub">Star</a>   </div>
-        </div>
-    </div>
-    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
-        <div class="author panel-body" style="text-align: center;">
-            <p style="font-size: 13px;font-family: 'Raleway', sans-serif;">Do you want to post anything?</p>
-            <button type="submit" class="btn btn-default btn-round-lg btn-lg">
-            Join as Author
-            </button>
-        </div>
-    </div>
-    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+<div class="yo panel panel-default">
+    <div class="panel panel-default" style="border:0;">
         <div class="panel-body">
-            <h3 style="font-size: 18px;">Recent Post</h3>
+            <h3 style="font-size: 18px;" class="text-center">Recent Post</h3>
             <div class="list-group">
                 {% for post in recent_post%}
                     <button type="button" class="list-group-item">{{ post }}</button>
@@ -48,9 +29,16 @@ padding-right: 10px;
             </div>
         </div>
     </div>
-    <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+    <div class="text-center" style="">
+        <p style="font-size: 13px;font-family: 'Raleway', sans-serif; ">Contribute on github or download source code and have fun.</p>
+        <a class="github-button" href="https://github.com/vimm0/spring_exercise/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/vimm0/spring_exercise/network" data-count-api="/repos/vimm0/spring_exercise#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vimm0/spring_exercise on GitHub">Fork</a>
+        <a class="github-button" href="https://github.com/vimm0/spring_exercise" data-icon="octicon-star" data-style="mega" data-count-href="/vimm0/spring_exercise/stargazers" data-count-api="/repos/vimm0/spring_exercise#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vimm0/spring_exercise on GitHub">Star</a>
+    </div>
+    <div class="panel panel-default" style="border:0;">
         <div class="panel-body">
-            <h3 style="font-size: 18px;">Recent Comments</h3>
+            <h3 style="font-size: 18px;" class="text-center">Recent Comments</h3>
+                        <hr>
+
             <ul class="custom-bullet" style="list-style:none;">
                 {% for comment in recent_comment %}
                     <li class="dsq-widget-item">
@@ -63,22 +51,25 @@ padding-right: 10px;
                             <a href="#">{{ comment.timestamp }}</a>&nbsp;·&nbsp;<a href="#">100 views</a></p>
                         </li>
                     {% endfor  %}
+
                 </ul>
+                                                            <hr>
+
             </div>
         </div>
-        <!-- </div> -->
-        <div class="panel panel-default" style="border:0; background-color:#f5f5f5;">
+        <div class="panel panel-default" style="border:0;">
             <div class="panel-body" >
-                <h3 style="font-size: 18px;">Popular Tags</h3>
-                    <ul class="list-group" style="margin-right:20%;list-style:none;">
-                                    {% for tag in t %}
+                <h3 style="font-size: 18px;" class="text-center">Popular Tags</h3>
+                <ul class="list-group" style="margin-right:20%;list-style:none;">
+                    {% for tag in t %}
                         <li><a class="btn btn-default btn-block" style="color:#333; border-radius: 2px;margin-left: 12%;">      {{ tag }}<span class="badge badge-default badge-pill pull-right">6</span></a>
-                        </li>
-                        {% endfor %}
-                        
-                    </ul>
-                </div>
-            </div>
+                    </li>
+                {% endfor %}
+                
+            </ul>
         </div>
     </div>
-    <!--Sidebar content-->
+</div>
+</p></p>
+</div>
+<!--Sidebar content-->
