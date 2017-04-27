@@ -24,12 +24,25 @@ from blog.apps.comments.forms import CommentForm
 from blog.apps.comments.models import Comment
 from .forms import PostForm
 from .models import Post
+from django.http import HttpResponseNotFound  
 
+# def handler404(request):
+#     response = render_to_response('Http404.html', {},
+#                                   context_instance=RequestContext(request))
+#     response.status_code = 404
+#     return response
+
+# def handler500(request):
+#     response = render_to_response('Http500.html', {},
+#                                   context_instance=RequestContext(request))
+#     response.status_code = 500
+#     return response
 # Admin stuff to workout with post manipulation
 def post_create(request):
 	if not request.user.is_staff or not request.user.is_superuser:
-		raise Http404
+		return render(request,'admin/Http404.html',status=404)
 		
+
 	form = PostForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		instance = form.save(commit=False)
