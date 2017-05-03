@@ -1,19 +1,3 @@
-"""
-Django settings for gettingstarted project, on Heroku. For more info, see:
-https://github.com/heroku/heroku-django-template
-For more information on this file, see
-https://docs.djangoproject.com/en/1.8/topics/settings/
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.8/ref/settings/
-"""
-
-
-
-
-"""MY PRODUCTION VERSION"""
-
-
-
 
 import os
 # import dj_database_url

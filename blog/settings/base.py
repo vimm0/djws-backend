@@ -11,7 +11,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#flat pages
+    #flat pages
     'django.contrib.sites',
     'django.contrib.flatpages',
     # third party
@@ -89,12 +89,3 @@ USE_TZ = True
 # Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'
-# # Static files (CSS, JavaScript, Images)
-# # https://docs.djangoproject.com/en/1.9/howto/static-files/
-
-# STATIC_URL = '/static/'
-
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
-
-# MEDIA_URL = "/media/"
-# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
