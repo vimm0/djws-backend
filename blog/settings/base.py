@@ -14,7 +14,6 @@ INSTALLED_APPS = [
 #flat pages
     'django.contrib.sites',
     'django.contrib.flatpages',
-
     # third party
     'crispy_forms',
     'markdown_deux',
@@ -22,11 +21,9 @@ INSTALLED_APPS = [
     # 'analytical',
     # 'ckeditor',
     'taggit',
-
     # local apps
     'blog.apps.comments',
     'blog.apps.posts',
-
 ]
 
 SITE_ID=1
@@ -84,13 +81,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Redactor settings

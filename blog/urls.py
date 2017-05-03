@@ -15,7 +15,7 @@ Including another URLconf
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf import settings
-from django.conf.urls import include, url
+from django.conf.urls import patterns,include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
@@ -23,38 +23,40 @@ from blog.apps.accounts.views import (login_view, register_view, logout_view, us
 from blog.apps.web_sikhshalaya.views import (about_view, sitemap_view, resource_view, contact_view, policy_view, terms_view)
 
 from django.contrib.flatpages import views
+from blog.apps.posts.admin import admin_site
 
+urlpatterns = patterns('',
+    (r'^myadmin/', include(admin_site.urls)),
+)
+# urlpatterns = [
+#     url(r'^admin/', admin.site.urls),
+#     url(r'^comments/', include("blog.apps.comments.urls", namespace='comments')),
+#     # accounts
+#     url(r'^register/', register_view, name='register'),
+#     url(r'^login/', login_view, name='login'),
+#     url(r'^logout/', logout_view, name='logout'),
+#         url(r'^detail/', user_detail_view, name='detail'),
 
-urlpatterns = [
-    
-    url(r'^admin/', admin.site.urls),
-    url(r'^comments/', include("blog.apps.comments.urls", namespace='comments')),
-    # accounts
-    url(r'^register/', register_view, name='register'),
-    url(r'^login/', login_view, name='login'),
-    url(r'^logout/', logout_view, name='logout'),
-        url(r'^detail/', user_detail_view, name='detail'),
+#     # web_shikhshalaya
+#     url(r'^sitemap/', sitemap_view, name='sitemap'),
+#     url(r'^resource/', resource_view, name='resource'),
+#     url(r'^contact/', contact_view, name='contact'),
+#     url(r'^about/', about_view, name='about'),
+#     url(r'^terms/', terms_view, name='terms'),
+#     url(r'^policy/', policy_view, name='policy'),
+#     # url(r'^officeindex/', about_office_view, name='about_office'),
 
-    # web_shikhshalaya
-    url(r'^sitemap/', sitemap_view, name='sitemap'),
-    url(r'^resource/', resource_view, name='resource'),
-    url(r'^contact/', contact_view, name='contact'),
-    url(r'^about/', about_view, name='about'),
-    url(r'^terms/', terms_view, name='terms'),
-    url(r'^policy/', policy_view, name='policy'),
-    # url(r'^officeindex/', about_office_view, name='about_office'),
+#     #flat pages
+#     url(r'^pages/', include('django.contrib.flatpages.urls')),
+#     #url(r'^posts/$', "<appname>.views.<function_name>"),
 
-    #flat pages
-    url(r'^pages/', include('django.contrib.flatpages.urls')),
-    #url(r'^posts/$', "<appname>.views.<function_name>"),
+#     url(r'^', include("blog.apps.posts.urls", namespace='posts')),
 
-    url(r'^', include("blog.apps.posts.urls", namespace='posts')),
+# ]
 
-]
-
-urlpatterns += [
-    url(r'^about-us/$', views.flatpage),
-]
+# urlpatterns += [
+#     url(r'^about-us/$', views.flatpage),
+# ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
