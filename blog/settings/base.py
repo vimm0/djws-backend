@@ -3,6 +3,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INTERNAL_IPS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,6 +23,7 @@ INSTALLED_APPS = [
     # 'ckeditor',
     'taggit',
     # local apps
+    'blog.apps.accounts',
     'blog.apps.comments',
     'blog.apps.posts',
 ]
@@ -40,6 +42,8 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #flat pages
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #debug_toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 ]

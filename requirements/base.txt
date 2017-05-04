@@ -10,11 +10,13 @@ Pillow==3.1.0
 django-taggit==0.22.0
 #for testing required in production
 whitenoise==3.3.0
+#for dev
+django-debug-toolbar==1.7
 
 
 #Not dependency but information
 #for server also unable to implement saved for lateruse
-gunicorn==19.6.0
+#gunicorn==19.6.0
 #required in heroku
 #this is dependency is for future database
 #postgres==2.2.1
