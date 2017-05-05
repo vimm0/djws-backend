@@ -16,11 +16,13 @@
 </style>
 <div class="post sitemap">
     <h2>Sitemap</h2>
-    
     <ul>
-      	<li><a href="/blog/fixed-commanderror-unable-find-locale-path-store-translations-file-init/">Fixed CommandError: Unable to find a locale path to store translations for file __init__.py</a> - <i>Feb. 27, 2017, 12:04 p.m.</i></li>
-      
-      	<li><a href="/blog/django-query-to-group-records-with-created-field/">Django query to group records with created field</a> - <i>Feb. 9, 2017, 11:53 p.m.</i></li>
+        {% for obj in instance%}
+
+      	<li><a href="{{ obj.get_absolute_url }}">{{obj}}</a>- <i>{{obj.publish}}</i></li>
+          {%endfor%}
+
+      <!-- 	<li><a href="/blog/django-query-to-group-records-with-created-field/">Django query to group records with created field</a> - <i>Feb. 9, 2017, 11:53 p.m.</i></li>
       
       	<li><a href="/blog/fixed-dns-probe-on-ubuntu/">Fixed DNS PROBE on Ubuntu</a> - <i>Jan. 22, 2017, 10:32 a.m.</i></li>
       
@@ -138,7 +140,7 @@
       
       	<li><a href="/blog/understanding-urls-django/">Understanding urls Django</a> - <i>Oct. 2, 2016, 8:13 a.m.</i></li>
       
-    </ul>
+    </ul> -->
     
   </div>
   {% endblock ocontent%}

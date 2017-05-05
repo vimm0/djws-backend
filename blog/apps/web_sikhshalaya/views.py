@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
+from blog.apps.posts.models import *
 # Create your views here.
 # def about_office_view(request):
 	# instance = get_object_or_404(Post, slug=slug)
@@ -16,8 +16,11 @@ def terms_view(request):
 	return render(request, "office_policy/terms.html")
 
 def sitemap_view(request):
-	# app_url = request.path
-	return render(request, "official/sitemap.html")
+	instance = Post.objects.all()
+	context = {
+	"instance":instance,
+	}
+	return render(request, "official/sitemap.html", context)
 
 def resource_view(request):
 	# app_url = request.path
