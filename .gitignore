@@ -1,10 +1,16 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+
+.pyc
+*~
+.idea
 
 # Django stuff:
 dev_settings.py
 dev_old.py
 
 blog/live-static-files/
-db.sqlite3
+
+
+#/static/
+/db.sqlite3
