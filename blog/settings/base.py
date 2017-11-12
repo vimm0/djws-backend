@@ -23,9 +23,9 @@ INSTALLED_APPS = [
     # 'ckeditor',
     'taggit',
     # local apps
-    'blog.apps.accounts',
-    'blog.apps.comments',
-    'blog.apps.posts',
+    'apps.accounts',
+    'apps.comments',
+    'apps.posts',
 ]
 
 SITE_ID=1

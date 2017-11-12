@@ -19,15 +19,15 @@ from django.conf.urls import patterns,include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from blog.apps.accounts.views import (login_view, register_view, logout_view, user_detail_view)
-from blog.apps.web_sikhshalaya.views import (about_view, sitemap_view, resource_view, contact_view, policy_view, terms_view)
+from apps.accounts.views import (login_view, register_view, logout_view, user_detail_view)
+from apps.web_sikhshalaya.views import (about_view, sitemap_view, resource_view, contact_view, policy_view, terms_view)
 
 from django.contrib.flatpages import views
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^comments/', include("blog.apps.comments.urls", namespace='comments')),
+    url(r'^comments/', include("apps.comments.urls", namespace='comments')),
     # accounts
     url(r'^register/', register_view, name='register'),
     url(r'^login/', login_view, name='login'),
@@ -47,7 +47,7 @@ urlpatterns = [
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     #url(r'^posts/$', "<appname>.views.<function_name>"),
 
-    url(r'^', include("blog.apps.posts.urls", namespace='posts')),
+    url(r'^', include("apps.posts.urls", namespace='posts')),
 
 ]
 
