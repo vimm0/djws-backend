@@ -20,8 +20,8 @@ from django.utils import timezone
 from taggit.models import Tag
 
 
-from blog.apps.comments.forms import CommentForm
-from blog.apps.comments.models import Comment
+from apps.comments.forms import CommentForm
+from apps.comments.models import Comment
 from .forms import PostForm
 from .models import Post
 from django.http import HttpResponseNotFound  

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from blog.apps.posts.models import *
+from apps.posts.models import *
 # Create your views here.
 # def about_office_view(request):
 	# instance = get_object_or_404(Post, slug=slug)
