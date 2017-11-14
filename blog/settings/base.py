@@ -91,6 +91,13 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vimmrana0@gmail.com'
+EMAIL_HOST_PASSWORD = '9815510732'
+EMAIL_PORT = 587
+
+
 # Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'

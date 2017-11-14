@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 
-from apps.posts.models import *
 from taggit.models import Tag
+
+from apps.posts.models import Post
+from apps.comments.models import Comment
+
 
 
 # Create your views here.
@@ -27,7 +30,6 @@ def sitemap_view(request):
     recent_post = Post.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time
     recent_comment = Comment.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time
     top_tag = Tag.objects.all().order_by('-id')[:4]  # for sidbar top tag
-
     context = {
         "recent_post": recent_post,
         "recent_comment": recent_comment,

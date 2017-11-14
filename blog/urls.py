@@ -12,10 +12,10 @@ urlpatterns = [
     url(r'^pages/', include('django.contrib.flatpages.urls')),
 
     # Apps
+    url(r'^', include("apps.web_sikhshalaya.urls", namespace='web_sikhshalaya')),
     url(r'^', include("apps.accounts.urls", namespace='accounts')),
     url(r'^comments/', include("apps.comments.urls", namespace='comments')),
     url(r'^', include("apps.posts.urls", namespace='posts')),
-    url(r'^', include("apps.web_sikhshalaya.urls", namespace='web_sikhshalaya')),
 ]
 
 urlpatterns += [
