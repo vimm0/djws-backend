@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <style>
+<style>
   .center {
   margin: auto;
   position: absolute;
@@ -16,16 +16,17 @@
   padding-right: 40px;
   padding-left: 40px;
   }
-  </style>
-  <h3 class="text-center" style="font-size:xx-large; font-family: 'Clicker Script', cursive;"></i>Web Sikhshalaya</h3>
-  <div class="container">
-    <div class="row center responsive">
+
+</style>
+<div class="container">
+    <h3 class="d-block mx-auto mt-4" style="font-size:xx-large; font-family: 'Clicker Script', cursive;"></i>Web Sikhshalaya</h3>
+    <div class="row d-block mx-auto">
         <h1>{{ title }}</h1>
         <hr/>
         <form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-          {{ form|crispy }}
-          <input type='submit' class='btn btn-default' value='{{ title }}' />
+            {{ form|crispy }}
+            <input type='submit' class='btn btn-default' value='{{ title }}'/>
         </form>
     </div>
-  </div>
-  {% endblock content %}
+</div>
+{% endblock content %}
