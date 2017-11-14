@@ -2,32 +2,19 @@
 <!--DOCTYPE html -->
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block head_title %}Web Sikhshalaya{% endblock head_title %}</title>
-    <!-- Optional theme -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" >
 
     <!-- Latest compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/font-mfizz-2.4.1/font-mfizz.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-
-    <!-- Icon and fonts -->
-    <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' > -->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-mfizz-2.4.1/font-mfizz.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="https://bromsgroveandredditchnetwork.files.wordpress.com/2015/06/barn-favicon-blue.png?w=240" size="16x16"/>
-    <!-- local css -->
-    <!-- <link rel='stylesheet' href='{% static "css/base.css" %}' /> -->
-    <!-- <link rel='stylesheet' href='{% static "css/yo.css" %}' /> -->
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
     <style>
 {% block style %}{% endblock style %}
 </style>
@@ -43,8 +30,6 @@ body{
     /*font-family: 'Varela Round', sans-serif;*/
     font-family: 'Roboto', sans-serif;
     font-family: 'Rubik', sans-serif;
-
-
 }
 </style>
 <div id="fb-root"></div>
@@ -62,7 +47,7 @@ body{
 <!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript" src="{% static 'js/jquery-1.12.2.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-<!-- <script type="text/javascript" src="{% static 'js/yoyo.js' %}"></script> -->
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js'></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
