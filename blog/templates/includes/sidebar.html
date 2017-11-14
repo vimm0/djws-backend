@@ -23,7 +23,7 @@ box-shadow: 1px -1px 9px 2px rgba(211, 211, 211, 0.2), 1px 1px 17px 2px rgba(93,
         <div class="panel-body">
             <h3 style="font-size: 18px;" class="text-center"> <i class="icon-python"></i> Recent Post</h3>
             <div class="list-group">
-                {% for post in recent_post%}
+                {% for post in recent_post %}
                     <button type="button" class="list-group-item">{{ post }}</button>
                 {% endfor %}
             </div>
@@ -64,7 +64,7 @@ box-shadow: 1px -1px 9px 2px rgba(211, 211, 211, 0.2), 1px 1px 17px 2px rgba(93,
             <div class="panel-body" >
                 <h3 style="font-size: 18px;" class="text-center">Popular Tags</h3>
                 <ul class="list-group" style="margin-right:20%;list-style:none;">
-                    {% for tag in t %}
+                    {% for tag in top_tag %}
                         <li><a class="btn btn-default btn-block" style="color:#333; border-radius: 2px;margin-left: 12%;">      {{ tag }}<span class="badge badge-default badge-pill pull-right">6</span></a>
                     </li>
                 {% endfor %}

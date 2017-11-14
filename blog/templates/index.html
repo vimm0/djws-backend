@@ -1,16 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- navbar -->
     {% include "includes/navbar.html"%}
     <div class="container">
         <div class="row">
          <div class="col-md-8 col-lg-8" style="margin-top: 5em;">
             {% block main-content %}{% endblock main-content %}
         </div>
-            <div class="col-md-4 col-lg-3" style="margin-top: 5em;">
-                {% include "includes/sidebar.html" %}
-            </div>
-           
+        <div class="col-md-4 col-lg-3" style="margin-top: 5em;">
+            {% include "includes/sidebar.html" %}
+        </div>
     </div>
 </div>
 {% endblock content %}
