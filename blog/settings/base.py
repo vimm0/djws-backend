@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.comments',
     'apps.posts',
+    'apps.web_sikhshalaya',
 ]
 
 SITE_ID=1
