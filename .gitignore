@@ -14,3 +14,4 @@ blog/live-static-files/
 
 #/static/
 /db.sqlite3
+/node_modules/

@@ -1,0 +1,35 @@
+{
+  "name": "web_sikhshalaya",
+  "version": "1.0.0",
+  "description": "Personal Blog application",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimm0/web_sikhshalaya.git"
+  },
+  "author": "Sandesh Rana (vimm0)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vimm0/web_sikhshalaya/issues"
+  },
+  "homepage": "https://github.com/vimm0/web_sikhshalaya#readme",
+  "dependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "bootstrap": "^4.0.0-beta",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.6.1",
+    "sass-loader": "^6.0.6",
+    "source-map": "^0.6.1",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  }
+}
