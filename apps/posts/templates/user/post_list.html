@@ -1,9 +1,15 @@
 {% extends "index.html" %}
 {% block main-content %}
+<style>
+small {
+font-size: 63%;
+font-weight: 500;
+}
+</style>
 {% if not request.user.is_authenticated %}
 <p>Please Login</p>
 {% else %}
-<h1>{{ title }}</h1>
+<h1 class="mb-3">{{ title }}</h1>
     <form method='GET' action='' class='row'>
         <div class='col-sm-8'>
             <div id="custom-search-input">
@@ -21,28 +27,34 @@
             <img src='{{ obj.image.url }}' class='img-responsive' />
         {% endif %}
         {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}
-        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3>
+        <h4 class="mb-3"><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h4>
         {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
         {{ obj.get_markdown|truncatechars_html:120 }}
-
-        <button type="button"  class="btn btn-default btn-round-sm btn-sm" ><a href="{{ obj.get_absolute_url }}" >view</a></button>
+        <button type="button" class="btn btn-outline-info"><a href="{{ obj.get_absolute_url }}" >view</a></button>
         <hr/>
     {% endfor %}
-    <!-- pagination -->
-    <div class="text-center">
-        <div class="pagination">
-            <nav class="pager" aria-label="...">
-                <ul class="pager">
-                    <span class="step-links">
-                        {% if object_list.has_previous %}
-                            <li><a type="button" class="btn btn-default" href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Newer</a></li>
-                        {% endif %}
-                        {% if object_list.has_next %}
-                            <li><a type="button" class="btn btn-default" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Older</a></li>
-                        {% endif %}
-                    </span>
-                </ul>
-            </div>
-        </div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if object_list.has_previous %}
+        <li class="page-item"><a class="page-link" href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Newer</a></li>
+    {% endif %}
+    {% if object_list.has_next %}
+        <li class="page-item"><a class="page-link" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><span aria-hidden="true"></span>Older</a></li>
+    {% endif %}
+  </ul>
+</nav>
+<!--<nav aria-label="Page navigation example">-->
+  <!--<ul class="pagination justify-content-center">-->
+    <!--<li class="page-item disabled">-->
+      <!--<a class="page-link" href="#" tabindex="-1">Previous</a>-->
+    <!--</li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">1</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+    <!--<li class="page-item">-->
+      <!--<a class="page-link" href="#">Next</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</nav>-->
 {% endif %}
     {% endblock main-content %}

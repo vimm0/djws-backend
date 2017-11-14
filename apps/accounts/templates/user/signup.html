@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-      {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="display: none">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-      {% endfor %}
+<div class="container">
+    <div class="row mt-4">
+        <form class="d-block mx-auto" method="post">
+            <h3>Sign up
+                <hr>
+            </h3>
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                <small style="display: none">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+            </p>
+            {% endfor %}
+            <button type="submit" class="btn btn-light d-block mx-auto">Sign up</button>
+        </form>
+    </div>
+</div>
 
-    <button type="submit">Sign up</button>
-  </form>
 {% endblock %}
