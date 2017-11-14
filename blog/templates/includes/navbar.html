@@ -22,13 +22,16 @@ box-shadow:2px -3px 20px 0px rgba(0, 0, 0, 0.2), 1px -2px 12px 0px rgba(0, 0, 0,
     <div class="collapse navbar-collapse" id="navbar-collapse-3">
         <ul class="nav navbar-nav navbar-right text-center" style="padding-top:4px;" >
             <li><a href="{% url 'sitemap' %}">Sitemap</a></li>
-            <!-- <li><a href="#">Rss</a></li> -->
             <li><a href="{% url 'resource' %}">Resource</a></li>
             <li><a href="{% url 'contact' %}">Support</a></li>
             <li><a href="#">Rss</a></li>
-            <!-- <li><a href="#">About</a></li> -->
+            {% if not request.user.is_authenticated %}
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'register' %}">SignUp</a></li>
+            {% else %}
+            <li><a href="{% url 'detail' %}">settings</a></li>
+            <li><a href="{% url 'logout' %}">LogOut</a></li>
+            {% endif %}
         </ul>
     </div><!-- /.navbar-collapse -->
 </div><!-- /.container -->

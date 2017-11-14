@@ -131,7 +131,7 @@ def post_list(request):
 	if not request.user.is_authenticated():
 		return render(request, "user/post_list.html", context)
 	else:
-		return render(request, "user/user_post_list.html", context)
+		return render(request, "user/post_list.html", context)
 
 def post_detail(request, slug=None):
 	"""
@@ -211,4 +211,4 @@ def post_detail(request, slug=None):
 	if not request.user.is_authenticated():
 		return render(request, "user/post_detail.html", context)
 	else:
-		return render(request, "user/user_post_detail.html", context)
+		return render(request, "user/post_detail.html", context)

@@ -1,5 +1,8 @@
 {% extends "index.html" %}
-{% block dcontent %}
+{% block main-content %}
+{% if not request.user.is_authenticated %}
+<p>Please Login</p>
+{% else %}
 <h1>{{ title }}</h1>
     <form method='GET' action='' class='row'>
         <div class='col-sm-8'>
@@ -21,7 +24,7 @@
         <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3>
         {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
         {{ obj.get_markdown|truncatechars_html:120 }}
-        
+
         <button type="button"  class="btn btn-default btn-round-sm btn-sm" ><a href="{{ obj.get_absolute_url }}" >view</a></button>
         <hr/>
     {% endfor %}
@@ -41,5 +44,5 @@
                 </ul>
             </div>
         </div>
-        
-    {% endblock dcontent %}
+{% endif %}
+    {% endblock main-content %}

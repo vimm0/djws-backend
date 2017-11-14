@@ -43,7 +43,10 @@ color: #b09f23;
 {% block post_detail_link %}
   <li><a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></li>
 {% endblock %}
-{% block dcontent %}
+{% block main-content %}
+{% if not request.user.is_authenticated %}
+<p>Please Login</p>
+{% else %}
 {% if instance.image %}
     <img src='{{ instance.image.url }}' class='img-responsive' />
   {% endif %}
@@ -161,4 +164,6 @@ color: #b09f23;
       </div>
     </div>
   </div>
-{% endblock dcontent %}
+{% endif %}
+
+{% endblock main-content %}
