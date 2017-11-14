@@ -2,26 +2,6 @@
 {% load crispy_forms_tags %}
 {% block content %}
   <style>
-  body {
-  background: linear-gradient(to bottom, #9E9E9E 50%, #405f77) !important;
-  background-image: linear-gradient(rgb(158, 158, 158) 50%, rgb(64, 95, 119));
-  background-position-x: initial;
-  background-position-y: initial;
-  background-size: initial;
-  background-repeat-x: initial;
-  background-repeat-y: initial;
-  background-attachment: initial;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: initial;
-  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00589F', endColorstr='#0073CF', GradientType=0);
-  background:linear-gradient(to bottom, rgb(38, 120, 137) 50%, rgba(0, 115, 207, 0.63)) !important
-  background: -webkit-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-  background: -moz-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-  background: -ms-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-  background: -o-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-  background: linear-gradient(to bottom, #00589F 50%, #0073CF) !important;*/
-  color: white; }
   .center {
   margin: auto;
   position: absolute;
@@ -46,7 +26,6 @@
           {{ form|crispy }}
           <input type='submit' class='btn btn-default' value='{{ title }}' />
         </form>
-      <!-- </div> -->
     </div>
   </div>
   {% endblock content %}
