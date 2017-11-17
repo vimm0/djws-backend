@@ -1,5 +1,5 @@
-{% extends "official_index.html" %}
-{% block ocontent %}
+{% extends "base.html" %}
+{% block content %}
 <!-- 	<style>
 		.bigline{
 			color: #2D892D;
@@ -102,8 +102,8 @@
 					<h2>Changes to terms</h2>
 				</div>
 				<p>If we change our terms of use we will post those changes on this page. Registered users will be sent an email that outlines changes made to the terms of use.</p>
-				<p class="about-support-note"><b>Looking for support?</b> The fastest way to get help is by sending a <a href="{% url 'contact' %}">support request</a>.<br><br><b>General inquiries:</b><br><a href="mailto:vimmrana0@gmail.com">vimmrana0@gmail.com</a></p>
+				<p class="about-support-note"><b>Looking for support?</b> The fastest way to get help is by sending a <a href="{% url 'web_sikhshalaya:contact' %}">support request</a>.<br><br><b>General inquiries:</b><br><a href="mailto:vimmrana0@gmail.com">vimmrana0@gmail.com</a></p>
 			</div>
 		</div>
 	</div>
-{% endblock ocontent %}
+{% endblock content %}
