@@ -6,106 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block head_title %}Web Sikhshalaya{% endblock head_title %}</title>
-    <!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">-->
 
     <!-- Latest compiled and minified CSS -->
-<<<<<<< HEAD
     <link href='{% assets 'app' 'css' %}' rel="stylesheet" type="text/css" media="all">
 
-    <link rel="stylesheet" href="{% static 'fonts/font-mfizz-2.4.1/font-mfizz.css' %}">
-=======
-    <link rel="stylesheet" href="{% static 'dist/css/app-848095e5f9a7868d83c8.css' %}">
-    <!--<link rel="stylesheet" href="{% static 'fonts/font-mfizz-2.4.1/font-mfizz.css' %}">-->
     <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
->>>>>>> a117869c2d8f4200633de6f542b7c6f524bca2f0
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300" rel="stylesheet">
     <link rel="shortcut icon" type="image/png"
           href="https://bromsgroveandredditchnetwork.files.wordpress.com/2015/06/barn-favicon-blue.png?w=240"
           size="16x16"/>
-
-    <style>
-{% block style %}{% endblock style %}
-
-    </style>
     {% block head_extra %} {% endblock head_extra %}
 </head>
 <body>
-<style>
-a:hover, a:focus {
-    color: #000;
-    text-decoration: none;
-}
-body{
-    /*font-family: 'Varela Round', sans-serif;*/
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Rubik', sans-serif;
-}
 
-</style>
-<div id="fb-root"></div>
-<script>
-</script>
 {% include "includes/messages_display.html" %}
-<!--Body  content block content from other templates-->
 {% block content %}
 {% endblock content %}
-
-<!--footer -->
 {% include "includes/footer.html"%}
-<!--footer -->
 
 <!-- Latest compiled and minified JavaScript -->
 <script language="JavaScript" src='{% assets 'app' 'js' %}' type="text/javascript"></script>
-<script type="text/javascript" src="{% static 'dist/js/app.bundle-848095e5f9a7868d83c8.js' %}"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<!-- <script type="text/javascript" src="{% static 'js/vue.js' %}"></script> -->
-<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
-<script type="text/javascript">
-$(document).ready(function(){
-    $(".content-markdown").each(function(){
-            var content = $(this).text()
-            var markedContent = marked(content)
-            $(this).html(markedContent)
-    })
-    $(".post-detail-item img").each(function(){
-            $(this).addClass("img-responsive");
-    })
-    
-    var contentInput = $("#id_content");
-    function setContent(value){
-        var markedContent = marked(value)
-        $("#preview-content").html(markedContent)
-        $("#preview-content img").each(function(){
-            $(this).addClass("img-responsive")
-        })
-    }
-    setContent(contentInput.val())
-    contentInput.keyup(function(){
-        var newContent = $(this).val()
-        setContent(newContent)
-    })
-    var titleInput = $("#id_title");
-    
-    function setTitle(value) {
-        $("#preview-title").text(value)
-    }
-    setTitle(titleInput.val())
-    titleInput.keyup(function(){
-        var newContent = $(this).val()
-        setTitle(newContent)
-    })
-    $(".comment-reply-btn").click(function(event){
-        event.preventDefault();
-        $(this).parent().next(".comment-reply").fadeToggle();
-    })
-    // preview-title
-    // preview-content
-})
-
-</script>
 </body>
 </html>

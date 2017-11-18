@@ -1,105 +1,106 @@
 @import "variables";
-
-.body-wrapper{
-    font-size: 1rem;
+// body
+body{
+font-family: $font-stack;
 }
 
-.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background-color: $brand-primary;
-    color:$head-text;
-    &-title{font-size:.85rem;}
-    & a {color:$head-text;}
-}
-nav {
-    background-color:$brand-primary;
-}
-.navbar > .media > .media-body > .nav-title {
-    color:$head-text;
-    text-decoration:none;
-    & a{color:$head-text;text-decoration:none;}
+a:hover, a:focus {
+    color: #000;
+    text-decoration: none;
 }
 
-ul.navbar-nav li a.url-item {
-    color:$head-text;
+// sidebar.html
+.custom-shadow{
+box-shadow: 1px -1px 9px 2px rgba(211, 211, 211, 0.2), 1px 1px 17px 2px rgba(93, 76, 76, 0.19);
+}
+.card-border{
+border:0;
+}
+.github-note{
+font-size:0.9rem;font-family: 'Raleway', sans-serif;
+}
+.custom-bullet{
+list-style:none;
 }
 
-h4{
-    &.header{color: $brand-primary;}
-    &.content-head > a{color:$head-text;}
-}
-p.content-head > a {
-    color:$head-text;
+// post_list.html
+small {
+font-size: 63%;
+font-weight: 500;
 }
 
-h5{
-    &.gallery-header > a{color: $title-black;}
-    &.text-center a{font-size:0.7rem;color: $brand-primary;}
-    &#download-heading{color: crimson;}
+// form.html
+  .center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  }
+  .center.responsive {
+  background-color:rgba(255, 255, 255, 0.13);
+  width: 50em;
+  height: 50em;
+  min-width: 280px;
+  max-width: 400px;
+  padding-right: 40px;
+  padding-left: 40px;
+  }
+form > div.alert.alert-block.alert-danger > ul {
+  list-style-type: none;
+  text-align: center;
+}
+.brand{
+font-size:xx-large;
+font-family: 'Clicker Script', cursive;
 }
 
-div{
-    &#notice-body li.title-item a{color:$title-black;}
-    &#publication-body li.title-item a{color:$title-black;}
-    &#download-body li.title-item a{color:$title-black;}
-    & a.social-item{color:$title-black;}
+// Signup.html
+.help-text{
+display: none;
+}
+.form-error{
+color: red;
 }
 
-table {
-    & > thead tr th{font-weight:300}
-    & > tbody tr td {
-    &.employee{font-size:.65rem;}
-    }
+// post-detail.html
+h1.post-detail-topic{
+color:#4285F4;
+}
+.post-detail-topic-status{
+color:red;
+}
+div.post-meta{
+color:#999;
+font-size: 13px;
+line-height:0.4em;
+font-family: 'Raleway', sans-serif;
+}
+.meta-list-item{
+display:inline;list-style:none;
+}
+.meta-list-item-link{
+text-decoration:none;
+}
+.author-link{
+color:#4285F4;
+}
+.comment-form{
+color:#777;
 }
 
-.subheader a{
-    color:$title-black;
+// sitemap.html
+.post ul li {
+    background: #FAFAFA;
+    color:#777;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #fff;
+    padding: 2px;
+    padding-left: 5px;
+    list-style: decimal;      }
+.post ul li a{
+      color:#4285F4;
 }
 
-img.profile{
-    height:7rem;width:7.5rem;
-}
-
-#map-canvas {
-    height: 400px;
-}
-
-.main-body {
-    font-family: 'Montserrat', Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    color: #e5e5e5;
-    font-size: 12px;
-    text-align: center;
-    & > a {color: #3e3e3e;text-decoration: none;}
-    & > div {margin-top: 18%;}
-}
-
-.body-wrapper {margin-bottom: 12rem;}
-
-.list-group-item.head {
-    background-color: $brand-primary;
-}
-
-.navbar {
-    background-color: $brand-primary;
-}
-
-a{
-    color: $brand-primary;
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #97b2ce;
-    border-color: #97b2ce;
-}
-
-.btn-outline-primary {
-    color: rgba(2,117,170,.92);
-    background-color: transparent;
-    background-image: none;
-    border-color: rgba(2,117,170,.92);
+// contact.html
+.contact-form {
+margin-top:70px;
 }

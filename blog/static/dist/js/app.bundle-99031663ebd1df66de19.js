@@ -97,8 +97,11 @@ module.exports = g;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scss_project_scss__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scss_project_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__scss_project_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__custom__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__custom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__custom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_project_scss__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__scss_project_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__scss_project_scss__);
+
 
 
 
@@ -16661,8 +16664,54 @@ var Popover = function ($) {
 /* 6 */
 /***/ (function(module, exports) {
 
+
+// JS for writing post
+$(document).ready(function () {
+    $(".content-markdown").each(function () {
+        var content = $(this).text();
+        var markedContent = marked(content);
+        $(this).html(markedContent);
+    });
+    $(".post-detail-item img").each(function () {
+        $(this).addClass("img-responsive");
+    });
+
+    var contentInput = $("#id_content");
+    function setContent(value) {
+        var markedContent = marked(value);
+        $("#preview-content").html(markedContent);
+        $("#preview-content img").each(function () {
+            $(this).addClass("img-responsive");
+        });
+    }
+    setContent(contentInput.val());
+    contentInput.keyup(function () {
+        var newContent = $(this).val();
+        setContent(newContent);
+    });
+    var titleInput = $("#id_title");
+
+    function setTitle(value) {
+        $("#preview-title").text(value);
+    }
+    setTitle(titleInput.val());
+    titleInput.keyup(function () {
+        var newContent = $(this).val();
+        setTitle(newContent);
+    });
+    $(".comment-reply-btn").click(function (event) {
+        event.preventDefault();
+        $(this).parent().next(".comment-reply").fadeToggle();
+    });
+});
+// JS for writing post
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
 // removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.bundle-848095e5f9a7868d83c8.js.map
+//# sourceMappingURL=app.bundle-99031663ebd1df66de19.js.map

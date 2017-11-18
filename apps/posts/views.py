@@ -7,7 +7,7 @@ try:
     from urllib.parse import quote_plus  # python 3
 except:
     pass
-
+from django.utils import timezone
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -15,7 +15,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils import timezone
 
 from taggit.models import Tag
 
@@ -92,13 +91,7 @@ def post_list(request):
     """
     Displays top posts.
     """
-    today = timezone.now().date()
-    top_tag = Tag.objects.all().order_by('-id')[:4]
-
     queryset_list = Post.objects.active()  # .order_by("-timestamp")
-    recent_post = Post.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time
-    recent_comment = Comment.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time
-    # print(recent_comment);
     if request.user.is_staff or request.user.is_superuser:
         queryset_list = Post.objects.all()
     query = request.GET.get("q")
@@ -122,13 +115,7 @@ def post_list(request):
         queryset = paginator.page(paginator.num_pages)
     context = {
         "object_list": queryset,
-        "title": "Top Posts",  # name in the title section in list
         "page_request_var": page_request_var,
-        "recent_post": recent_post,
-        "recent_comment": recent_comment,
-        "today": today,
-        "top_tag": top_tag
-
     }
     # authentication
     if not request.user.is_authenticated():
@@ -141,14 +128,6 @@ def post_detail(request, slug=None):
     """
     Displays details of Post.
     """
-    # taggit
-    # tag = Post.objects.filter(
-    #     tags__name__in=list(self.objects.tags.values_list('name', flat=True))
-    # ).exclude(id=self.object.id)
-    # tag = Post..filter(pk=pk)
-    # tag_names = [tag.name for tag in Tag.objects.all()]
-    # print(tag_names)
-    # import pdb; pdb.set_trace()
     instance = get_object_or_404(Post, slug=slug)
     recent_post = Post.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time
     recent_comment = Comment.objects.all().order_by('-id')[:3]  # 3 top list from descending order to time

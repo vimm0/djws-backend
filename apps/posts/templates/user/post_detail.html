@@ -4,20 +4,10 @@
 {% block head_title %}
 {{ instance.title }} | {{ block.super }}
 {% endblock head_title %}
-<style>
-h1 > small {
-
-}
-
-
-
-
-
-
-</style>
 {% block post_detail_link %}
 <li><a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></li>
 {% endblock %}
+
 {% block main-content %}
 {% if not request.user.is_authenticated %}
 <p>Please Login</p>
@@ -25,24 +15,24 @@ h1 > small {
 {% if instance.image %}
 <img src='{{ instance.image.url }}' class='img-responsive'/>
 {% endif %}
-<h1 style="color:#4285F4">{{ title }}
-    <small style="font-size: 54%;font-weight: 500;">
+<h1 class="post-detail-topic">{{ title }}
+    <small>
         {% if instance.draft %}
-        <span style='color:red;'>Draft</span>
+        <span class="post-detail-topic-status">Draft</span>
         {% endif %}
     </small>
 </h1>
-<div class="meta" style="color:#999;line-height:0.4em; font-size: 13px;font-family: 'Raleway', sans-serif;">
+<div class="post-meta">
     <p>By: {{ user }} ● {{ instance.publish }}{% if updated %} ● {{ updated }}{% endif %}</p>
     <p>Read time: {% if instance.read_time <= 1 %} < 1 Minute {% else %}{{ instance.read_time }} minutes {% endif %}</p>
     <p>Views: 12 times</p>
     <p>
         <!-- tags -->
-    <li style="display:inline;list-style:none;">Tag{{ num_tags|pluralize }}:</li>
+    <li class="meta-list-item">Tag{{ num_tags|pluralize }}:</li>
     {% for tag in tag %}
-    <li style="display:inline;list-style:none;"><a href='#' style="text-decoration:none;">| {{ tag }} </a></li>
+    <li class="meta-list-item"><a href='#' class="meta-list-item-link">| {{ tag }} </a></li>
     {% empty %}
-    <li style="display:inline;list-style:none;">No tagged yet</li>
+    <li class="meta-list-item">No tagged yet</li>
     {% endfor %}
     </p>
     <!-- getting fullname -->
@@ -74,15 +64,14 @@ h1 > small {
             <div class="card-block">
 
                 <div class="media ">
-                    <!--<a><img class="img-responsive" alt="No Internet" height="62" width="52"/></a>-->
                     <img class="d-flex mr-3"
                          src="https://yoast-mercury.s3.amazonaws.com/uploads/2015/09/Avatar_Joost_500x500.png"
                          alt="Generic placeholder image" height="100" width="100">
                     <div class="media-body">
                         <h5 class="mt-3"><a href="https://vimm0.github.io" title="personal-website"
-                                            style="color:#4285F4;">Vimm0 |</a> kathmandu</h5>
+                                            class="author-link">Vimm0 |</a> kathmandu</h5>
                         <p>Python enthusiast, Linux enthusiast and Senior writer at Learning Academy.<br>
-                            website:<a href="https://vimm0-blog.herokuapp.com" style="color:#4285F4;">https://vimm0-blog.herokuapp.com</a>
+                            website:<a href="https://vimm0-blog.herokuapp.com" class="author-link">https://vimm0-blog.herokuapp.com</a>
                         </p>
                     </div>
                 </div>
@@ -109,8 +98,7 @@ h1 > small {
             {% if request.user.is_authenticated %}
             <form method="POST" action="."> {% csrf_token %}
                 {{ comment_form|crispy }}
-                <input type='submit' value='Post comment' class="btn btn-outline-info"
-                       style="color:#777;">
+                <input type='submit' value='Post comment' class="comment-form btn btn-outline-info">
             </form>
             {% else %}
             <p>You must login to comment </p>
@@ -123,8 +111,7 @@ h1 > small {
                     comment.children.count >
                     0 %}{{ comment.children.count }} Comment{% if comment.children.count > 1 %}s{% endif %} | {%
                     endif
-                    %} <a class='comment-reply-btn' href='#'>Reply</a> | <a class=''
-                                                                            href='{{ comment.get_absolute_url }}'>Thread</a>
+                    %} <a class='comment-reply-btn' href='#'>Reply</a> | <a href='{{ comment.get_absolute_url }}'>Thread</a>
                 </footer>
                 <!-- reply -->
                 <div class='comment-reply'>
@@ -140,7 +127,6 @@ h1 > small {
                         <input type='hidden' name='parent_id' value='{{ comment.id }}'>
                         <input type='submit' value='Reply' class="btn btn-outline-info">
                     </form>
-
                     {% else %}
                     <p>You must login to comment </p>
                     {% endif %}
@@ -152,5 +138,4 @@ h1 > small {
     </div>
 </div>
 {% endif %}
-
 {% endblock main-content %}
