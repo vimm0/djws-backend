@@ -17,7 +17,8 @@ box-shadow: 1px -1px 9px 2px rgba(211, 211, 211, 0.2), 1px 1px 17px 2px rgba(93,
 border:0;
 }
 .github-note{
-font-size:0.9rem;font-family: 'Raleway', sans-serif;
+font-size:0.9rem;
+font-family: $font-note;
 }
 .custom-bullet{
 list-style:none;
@@ -50,7 +51,7 @@ form > div.alert.alert-block.alert-danger > ul {
 }
 .brand{
 font-size:xx-large;
-font-family: 'Clicker Script', cursive;
+font-family: $font-brand;
 }
 
 // Signup.html
@@ -63,7 +64,7 @@ color: red;
 
 // post-detail.html
 h1.post-detail-topic{
-color:#4285F4;
+color:$brand-primary;
 }
 .post-detail-topic-status{
 color:red;
@@ -75,13 +76,14 @@ line-height:0.4em;
 font-family: 'Raleway', sans-serif;
 }
 .meta-list-item{
-display:inline;list-style:none;
+display:inline;
+list-style:none;
 }
 .meta-list-item-link{
 text-decoration:none;
 }
 .author-link{
-color:#4285F4;
+color:$brand-primary;
 }
 .comment-form{
 color:#777;
@@ -95,9 +97,10 @@ color:#777;
     border-top: 1px solid #fff;
     padding: 2px;
     padding-left: 5px;
-    list-style: decimal;      }
+    list-style: decimal;
+    }
 .post ul li a{
-      color:#4285F4;
+color:$brand-primary;
 }
 
 // contact.html
