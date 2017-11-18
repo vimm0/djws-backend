@@ -4,7 +4,8 @@ from django.contrib.auth import (
     login,
     logout,
 
-    )
+)
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
@@ -15,8 +16,8 @@ from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 from .forms import UserLoginForm, UserRegisterForm
 
+
 def login_view(request):
-    print(request.user.is_authenticated())
     next = request.GET.get('next')
     title = "Login"
     form = UserLoginForm(request.POST or None)
@@ -28,11 +29,10 @@ def login_view(request):
         if next:
             return redirect(next)
         return redirect("/")
-    return render(request, "user/form.html", {"form":form, "title": title})
+    return render(request, "user/form.html", {"form": form, "title": title})
 
 
 def register_view(request):
-    print(request.user.is_authenticated())
     next = request.GET.get('next')
     title = "Register"
     form = UserRegisterForm(request.POST or None)
@@ -74,8 +74,10 @@ def logout_view(request):
     logout(request)
     return redirect("/")
 
+
 def user_detail_view(request):
     return render(request, "user/user_profile.html")
+
 
 def activate(request, uidb64, token):
     try:

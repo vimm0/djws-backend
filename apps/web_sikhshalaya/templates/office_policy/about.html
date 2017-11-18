@@ -1,5 +1,5 @@
-{% extends "official_index.html" %}
-{% block ocontent %}
+{% extends "base.html" %}
+{% block content %}
 
 <!-- <style>
 	.bigline{
@@ -122,8 +122,8 @@
 							</tr>
 						</tbody>
 					</table>
-					<p class="about-support-note"><b>Looking for support?</b> The fastest way to get help is by sending a <a href="{% url 'contact' %}">support request</a>.<br><br><b>General inquiries:</b><br><a href="mailto:vimmrana0@gmail.com">vimmrana0@gmail.com</a></p>
+					<p class="about-support-note"><b>Looking for support?</b> The fastest way to get help is by sending a <a href="{% url 'web_sikhshalaya:contact' %}">support request</a>.<br><br><b>General inquiries:</b><br><a href="mailto:vimmrana0@gmail.com">vimmrana0@gmail.com</a></p>
 				</div>			
 			</div>
 		</div>
-	{% endblock ocontent %}
+	{% endblock content %}
