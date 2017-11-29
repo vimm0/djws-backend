@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'markdown_deux',
     'pagedown',
+    'froala_editor',
     # 'analytical',
     # 'ckeditor',
     'taggit',
@@ -97,6 +98,7 @@ EMAIL_HOST_USER = 'vimmrana0@gmail.com'
 EMAIL_HOST_PASSWORD = '9815510732'
 EMAIL_PORT = 587
 
+FROALA_INCLUDE_JQUERY = False
 
 # Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}

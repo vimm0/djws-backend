@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
 
-const outputPath = __dirname + '/djwebshiksha/static/dist/'
+const outputPath = __dirname + '/djwebshiksha/static/'
 
 // the path(s) that should be cleaned
 let pathsToClean = [outputPath]
@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    publicPath: 'dist/',
+    publicPath: '/static/',
     filename: 'js/[name].bundle-[hash].js'
   },
   devtool: 'source-map',
@@ -50,7 +50,7 @@ module.exports = {
         })
       },
       {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff'},
-      {test: /\.(png|gif|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader', query: { outputPath: 'images/', publicPath: '../',} }
+      {test: /\.(png|gif|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader', query: { outputPath: 'images/', publicPath: '/static/',} }
     ]
   },
   plugins: [
