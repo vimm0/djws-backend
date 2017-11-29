@@ -3,12 +3,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
 
-const outputPath = __dirname + '/blog/static/dist/'
+const outputPath = __dirname + '/djwebshiksha/static/dist/'
 
 // the path(s) that should be cleaned
 let pathsToClean = [outputPath]
-
-//let commonsPlugin = new webpack.optimize.CommonsChunkPlugin({name: 'common', filename: 'js/common.bundle-[hash].js'})
 
 let extractTextPlugin = new ExtractTextPlugin({filename: 'css/[name]-[hash].css', allChunks: true})
 
@@ -19,7 +17,7 @@ let assetsPluginInstance = new AssetsPlugin({
 
 module.exports = {
   entry: {
-    app: './blog/src/index.js'
+    app: './djwebshiksha/src/index.js'
   },
   output: {
     path: outputPath,
@@ -57,7 +55,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(pathsToClean),
-//    commonsPlugin,
     extractTextPlugin,
     assetsPluginInstance
   ]

@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 LOGIN_URL = "/login/"
-ROOT_URLCONF = 'blog.urls'
+ROOT_URLCONF = 'djwebshiksha.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog.wsgi.application'
+WSGI_APPLICATION = 'djwebshiksha.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
