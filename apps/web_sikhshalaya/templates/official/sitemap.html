@@ -1,10 +1,11 @@
 {% extends "index.html" %}
 {% block main-content %}
 <div class="post sitemap">
-    <h3>Sitemap</h3>
+    <h2>Sitemap</h2>
     <ul>
-        {% for obj in object_list %}
-        <li><a href="{{ obj.get_absolute_url }}">{{obj}}</a>- <i>{{obj.publish}}</i></li>
+        {% for obj in object_list%}
+        <li><a href="{% url 'posts:list' %}">{{obj}}</a>- <i>{{obj.publish}}</i></li>
         {%endfor%}
-  </div>
+    </ul>
+</div>
   {% endblock main-content %}

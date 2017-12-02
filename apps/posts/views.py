@@ -13,7 +13,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 
 from taggit.models import Tag
@@ -22,7 +22,6 @@ from apps.comments.forms import CommentForm
 from apps.comments.models import Comment
 from .forms import PostForm
 from .models import Post
-from django.http import HttpResponseNotFound
 
 
 # def handler404(request):

@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<style>
-
-</style>
 <div class="container">
     <div class="row mt-4">
         <form class="d-block mx-auto" method="post">
@@ -19,7 +16,7 @@
                 <small class="help-text">{{ field.help_text }}</small>
                 {% endif %}
                 {% for error in field.errors %}
-            <p class="form-error">{{ error }}</p>
+            <p class="error">{{ error }}</p>
             {% endfor %}
             </p>
             {% endfor %}
@@ -27,4 +24,5 @@
         </form>
     </div>
 </div>
+
 {% endblock %}
