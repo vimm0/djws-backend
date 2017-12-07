@@ -4,7 +4,9 @@
   "description": "Personal Blog application",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config build/webpack.config.js"
+    "build": "webpack --config build/webpack.config.js --progress --colors",
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "watch": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,10 @@
     "vue": "^2.5.9",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.9",
-    "webpack": "^3.8.1"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.5"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1"
   }
 }

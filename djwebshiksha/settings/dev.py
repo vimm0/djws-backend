@@ -23,4 +23,3 @@ DATABASES = {
     }
 }
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
-WEBPACK_ASSET_JSON = os.path.join(BASE_DIR, '../assets.json')

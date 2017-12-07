@@ -6,11 +6,11 @@ module.exports = {
         sourceToClean: ['css', 'js'],
         cssFilename: 'css/[name]-[hash].css',
         jsFilename: 'js/[name].bundle-[hash].js',
-        constantTemplate:'templates/variable.html',
+        constantTemplate:'djwebshiksha/templates/variable.html',
 
     },
     base: {
-        templateName: '../templates/base.html',
+        templateName: '../djwebshiksha/templates/base.html',
     },
     loader: {
         css: 'css-loader',

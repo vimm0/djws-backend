@@ -1,37 +1,38 @@
 const path = require('path');
 const webpack = require('webpack');
+var config = require('../config');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const AssetsPlugin = require('assets-webpack-plugin');
+// const AssetsPlugin = require('assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
 // Custom
-let outputPath = resolve('/static/');
+let outputPath = resolve("/static/");
 
 // the path(s) that should be cleaned
 let pathsToClean = [outputPath];
 
 let extractTextPlugin = new ExtractTextPlugin({filename: 'css/[name]-[hash].css', allChunks: true});
 
-let assetsPluginInstance = new AssetsPlugin({
-    filename: 'assets.json',
-    publicPath: '/static/',
-    path: path.join(__dirname, '..')
-});
-
 module.exports = {
-    entry: {
-        app: './djwebshiksha/src/index.js'
-    },
+    // changed part is from http://owaislone.org/blog/webpack-plus-reactjs-and-django/
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './djwebshiksha/src/index.js',
+    ],
     output: {
         path: outputPath,
-        publicPath: '/static/',
+        publicPath: 'http://localhost:3000/assets/bundles/',
         filename: 'js/[name].bundle-[hash].js'
     },
-    devtool: 'source-map',
+    devtool: '#eval-source-map',
     resolve: {
         // extensions: ['.js', '.vue', '.json'],
         alias: {
@@ -75,13 +76,33 @@ module.exports = {
             {
                 test: /\.(png|gif|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'file-loader',
-                query: {outputPath: 'images/', publicPath: '/static/',}
+                query: {outputPath: 'images/',
+                    publicPath: 'http://localhost:3000/assets/bundles/',
+                }
             }
         ]
     },
+    // devServer: {
+    //     // contentBase: "/static/",
+    //     // compress: true,
+    //     publicPath: 'http://localhost:8000/static/',
+    //     hot:true,
+    //     // open:true,
+    //     inline:true,
+    //     // host: '0.0.0.0',
+    //     // port: 8080,
+    // },
     plugins: [
-        new CleanWebpackPlugin(pathsToClean),
+        // new CleanWebpackPlugin(pathsToClean),
         extractTextPlugin,
-        assetsPluginInstance
+        new HtmlWebpackPlugin({
+        template: config.index.constantTemplate,
+        filename: config.base.templateName,
+        hash: true
+        },),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+
     ]
 };

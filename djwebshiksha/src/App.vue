@@ -10,7 +10,8 @@
   }
 </script>
 <style lang="scss">
- #app{
-  color:lightgreen;
- }
+#app{
+ color:lightgreen;
+ font-size:1rem;
+}
 </style>
