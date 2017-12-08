@@ -6,6 +6,6 @@ import App from './App.vue'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#fb-root',
+  el: '#djwebshiksha-root',
   render: h => h(App),
 });
