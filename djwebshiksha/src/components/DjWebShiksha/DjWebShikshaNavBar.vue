@@ -1,35 +1,43 @@
 <template>
     <div id="nav">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand  brand justify-content-center align-self-center" href="{% url 'posts:list' %}">
-                    Web Sikhshalaya</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-                        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center align-self-center"
-                     id="navbarsExampleDefault">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'web_sikhshalaya:sitemap' %}">Sitemap</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="{% url 'web_sikhshalaya:resource' %}">Resource</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'web_sikhshalaya:contact' %}">Support</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Rss</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <v-app id="inspire">
+            <v-card color="grey lighten-4" flat height="200px">
+                <v-toolbar color="grey darken-1" dark>
+                    <v-toolbar-side-icon></v-toolbar-side-icon>
+                    <v-menu :nudge-width="100">
+                        <v-toolbar-title slot="activator">
+                            <span class="brand">Web Shikshalaya</span>
+                            <v-icon dark>arrow_drop_down</v-icon>
+                        </v-toolbar-title>
+                        <v-list>
+                            <v-list-tile v-for="item in items" :key="item" @click="">
+                                <v-list-tile-title v-text="item"></v-list-tile-title>
+                            </v-list-tile>
+                        </v-list>
+                    </v-menu>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                        <v-icon>search</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>favorite</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>more_vert</v-icon>
+                    </v-btn>
+                </v-toolbar>
+            </v-card>
+        </v-app>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'nav'
+        name: 'nav',
+        data() {
+            return {items: ['Home', 'Sitemap', 'Resource', 'Support']}
+        },
     }
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
 </style>

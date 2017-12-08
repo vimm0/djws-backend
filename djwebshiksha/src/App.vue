@@ -10,6 +10,7 @@
     import DjWebShikshaNavBar from './components/DjWebShiksha/DjWebShikshaNavBar.vue'
     import DjWebShikshaContent from './components/DjWebShiksha/DjWebShikshaContent.vue'
     import DjWebShikshaFooter from './components/DjWebShiksha/DjWebShikshaFooter.vue'
+    import SiteMap from './components/SiteMap.vue'
 
     export default {
         name: 'app',
@@ -21,8 +22,4 @@
     }
 </script>
 <style lang="scss">
-    /*#app {*/
-        /*color: lightgreen;*/
-        /*font-size: 1rem;*/
-    /*}*/
 </style>
