@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    import DjWebShikshaNavBar from './component/DjWebShiksha/DjWebShikshaNavBar.vue'
-    import DjWebShikshaContent from './component/DjWebShiksha/DjWebShikshaContent.vue'
-    import DjWebShikshaFooter from './component/DjWebShiksha/DjWebShikshaFooter.vue'
+    import DjWebShikshaNavBar from './components/DjWebShiksha/DjWebShikshaNavBar.vue'
+    import DjWebShikshaContent from './components/DjWebShiksha/DjWebShikshaContent.vue'
+    import DjWebShikshaFooter from './components/DjWebShiksha/DjWebShikshaFooter.vue'
 
     export default {
         name: 'app',
@@ -21,8 +21,8 @@
     }
 </script>
 <style lang="scss">
-    #app {
-        color: lightgreen;
-        font-size: 1rem;
-    }
+    /*#app {*/
+        /*color: lightgreen;*/
+        /*font-size: 1rem;*/
+    /*}*/
 </style>
