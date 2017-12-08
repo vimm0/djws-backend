@@ -12,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #flat pages
+    # flat pages
     'django.contrib.sites',
     'django.contrib.flatpages',
     # third party
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'apps.web_sikhshalaya',
 ]
 
-SITE_ID=1
+SITE_ID = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = [
@@ -42,10 +42,10 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #flat pages
+    # flat pages
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    #debug_toolbar
+    # debug_toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 ]
@@ -71,20 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djwebshiksha.wsgi.application'
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+                            {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
+                            {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
+                            {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
+                            ]
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "..", "static"),
