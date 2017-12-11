@@ -1,8 +1,10 @@
 <template>
     <div id="app">
-        <djws-navbar></djws-navbar>
-        <djws-shiksha-content></djws-shiksha-content>
-        <djws-footer></djws-footer>
+        <v-app>
+            <!--<djws-navbar></djws-navbar>-->
+            <djws-shiksha-content></djws-shiksha-content>
+            <djws-footer></djws-footer>
+        </v-app>
     </div>
 </template>
 
@@ -10,7 +12,6 @@
     import DjWebShikshaNavBar from './components/DjWebShiksha/DjWebShikshaNavBar.vue'
     import DjWebShikshaContent from './components/DjWebShiksha/DjWebShikshaContent.vue'
     import DjWebShikshaFooter from './components/DjWebShiksha/DjWebShikshaFooter.vue'
-    import SiteMap from './components/SiteMap.vue'
 
     export default {
         name: 'app',
