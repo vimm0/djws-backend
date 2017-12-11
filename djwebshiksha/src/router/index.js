@@ -21,9 +21,9 @@ const routes = [
         path: '/',
         component: require('../App.vue'),
     },
-    {
-        name:'sitemap',
-        path: '/sitemap',
-        component: require('../components/SiteMap.vue'),
-    },
+    // {
+    //     name:'sitemap',
+    //     path: '/sitemap',
+    //     component: require('../components/SiteMap.vue'),
+    // },
 ];

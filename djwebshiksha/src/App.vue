@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <v-app>
-            <!--<djws-navbar></djws-navbar>-->
+            <djws-navbar></djws-navbar>
             <djws-shiksha-content></djws-shiksha-content>
             <djws-footer></djws-footer>
         </v-app>
