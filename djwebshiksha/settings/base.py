@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # 'ckeditor',
     'taggit',
     'rest_framework',
+    'corsheaders',
 
     # local apps
     'apps.accounts',
@@ -38,6 +39,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -108,3 +110,10 @@ FROALA_INCLUDE_JQUERY = False
 # Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+    '127.0.0.1:8000'
+)
