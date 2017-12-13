@@ -6,4 +6,4 @@ from apps.comments.models import Comment
 class CommentSerializer(ModelSerializer):
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ('object_id', 'content_type', 'post_name', 'commenter', 'content', 'timestamp')

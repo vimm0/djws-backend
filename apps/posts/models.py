@@ -82,6 +82,10 @@ class Post(models.Model):
     class Meta:
         ordering = ["-timestamp", "-updated"]
 
+    @property
+    def author(self):
+        return str(self.user.username)
+
     def get_markdown(self):
         content = self.content
         markdown_text = markdown(content)
