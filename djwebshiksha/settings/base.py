@@ -3,8 +3,8 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INTERNAL_IPS = ['127.0.0.1']
-
+# INTERNAL_IPS = ['127.0.0.1']
+ALLOWED_HOSTS = ['djshikshalaya.herokuapp.com', '*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -87,11 +87,6 @@ AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.Us
 #         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 #     ]
 # }
-
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "..", "static"),
-)
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
