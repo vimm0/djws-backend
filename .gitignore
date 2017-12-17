@@ -6,8 +6,10 @@ __pycache__/
 .idea
 
 # Django stuff:
-
-
+package.json
+package-lock.json
+build/
+config/
 /static/
 /db.sqlite3
 /db.sqlite3.*
