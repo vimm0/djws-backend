@@ -2,7 +2,7 @@ from .base import *
 
 SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 
-DEBUG = False
+DEBUG = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '..', 'static'),
