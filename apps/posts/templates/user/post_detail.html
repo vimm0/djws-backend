@@ -103,11 +103,7 @@
             {% for comment in comments %}
             <blockquote>
                 <p>{{ comment.content }}</p>
-                <footer>via {{ comment.user }} | {{ comment.timestamp|timesince }} ago | {% if
-                    comment.children.count >
-                    0 %}{{ comment.children.count }} Comment{% if comment.children.count > 1 %}s{% endif %} | {%
-                    endif
-                    %} <a class='comment-reply-btn' href='#'>Reply</a> | <a href='{{ comment.get_absolute_url }}'>Thread</a>
+                <footer>via {{ comment.user }} | {{ comment.timestamp|timesince }} ago | {% if comment.children.count > 0 %}{{ comment.children.count }} Comment{% if comment.children.count > 1 %}s{% endif %} | {% endif %} <a class='comment-reply-btn' href='#'>Reply</a> | <a href='{{ comment.get_absolute_url }}'>Thread</a>
                 </footer>
                 <!-- reply -->
                 <div class='comment-reply'>
