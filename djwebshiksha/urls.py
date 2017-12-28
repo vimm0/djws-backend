@@ -16,8 +16,6 @@ urlpatterns = [
     url(r'^', include("apps.accounts.urls", namespace='accounts')),
     url(r'^comments/', include("apps.comments.urls", namespace='comments')),
     url(r'^', include("apps.posts.urls", namespace='posts')),
-    url(r'^froala_editor/', include('froala_editor.urls')),
-
 ]
 
 urlpatterns += [

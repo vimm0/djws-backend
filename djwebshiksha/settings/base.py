@@ -19,7 +19,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'markdown_deux',
     'pagedown',
-    'froala_editor',
     # 'analytical',
     # 'ckeditor',
     'taggit',
