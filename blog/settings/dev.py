@@ -19,6 +19,7 @@ INSTALLED_APPS += (
     'debug_toolbar',
 )
 
+AUTH_PASSWORD_VALIDATORS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

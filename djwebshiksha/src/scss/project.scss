@@ -1,0 +1,9 @@
+// @import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~vuetify/dist/vuetify.min.css';
+
+ @import 'style';
+//@import '~froala-editor/css/froala_editor.css';
+//@import '~froala-editor/css/third_party/spell_checker.css';
+@import '../froala_editor/css/froala_editor.css';
+@import '../froala_editor/css/third_party/spell_checker.min.css';
