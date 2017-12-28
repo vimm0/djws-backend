@@ -11,17 +11,20 @@ from django.utils.text import slugify
 
 # from ckeditor.fields import RichTextField
 from taggit.managers import TaggableManager
+from froala_editor.fields import FroalaField
 
 from markdown_deux import markdown
 from apps.comments.models import Comment
 
 from .utils import get_read_time
+
+
 # Create your models here.
 # MVC MODEL VIEW CONTROLLER
 
 
-#Post.objects.all()
-#Post.objects.create(user=user, title="Some time")
+# Post.objects.all()
+# Post.objects.create(user=user, title="Some time")
 
 class PostManager(models.Manager):
     def active(self, *args, **kwargs):
@@ -30,8 +33,8 @@ class PostManager(models.Manager):
 
 
 def upload_location(instance, filename):
-    #filebase, extension = filename.split(".")
-    #return "%s/%s.%s" %(instance.id, instance.id, extension)
+    # filebase, extension = filename.split(".")
+    # return "%s/%s.%s" %(instance.id, instance.id, extension)
     PostModel = instance.__class__
     new_id = PostModel.objects.order_by("id").last().id + 1
     """
@@ -41,31 +44,31 @@ def upload_location(instance, filename):
     Which will give us the most recently created Model instance
     We add 1 to it, so we get what should be the same id as the the post we are creating.
     """
-    return "%s/%s" %(new_id, filename)
+    return "%s/%s" % (new_id, filename)
+
 
 class Post(models.Model):
     # content = RichTextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to=upload_location, 
-            null=True, 
-            blank=True, 
-            width_field="width_field", 
-            height_field="height_field")
+    image = models.ImageField(upload_to=upload_location,
+                              null=True,
+                              blank=True,
+                              width_field="width_field",
+                              height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
-    content = models.TextField()
+    content = FroalaField()
     draft = models.BooleanField(default=False)
     publish = models.DateField(auto_now=False, auto_now_add=False)
-    read_time =  models.IntegerField(default=0) # models.TimeField(null=True, blank=True) #assume minutes
+    read_time = models.IntegerField(default=0)  # models.TimeField(null=True, blank=True) #assume minutes
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     objects = PostManager()
 
     tags = TaggableManager()
-
 
     def __unicode__(self):
         return self.title
@@ -104,7 +107,7 @@ def create_slug(instance, new_slug=None):
     qs = Post.objects.filter(slug=slug).order_by("-id")
     exists = qs.exists()
     if exists:
-        new_slug = "%s-%s" %(slug, qs.first().id)
+        new_slug = "%s-%s" % (slug, qs.first().id)
         return create_slug(instance, new_slug=new_slug)
     return slug
 
@@ -120,13 +123,3 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(pre_save_post_receiver, sender=Post)
-
-
-
-
-
-
-
-
-
-
