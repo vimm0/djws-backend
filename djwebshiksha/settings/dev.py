@@ -2,11 +2,13 @@ from .base import *
 
 SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 
-DEBUG = False
+DEBUG = True
 """
 Martor static files are not working in  DEBUG = True
+In DEBUG = False, media is served by server (i.e. nginx, apache)
+
 """
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "..", "static"),

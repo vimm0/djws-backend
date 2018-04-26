@@ -1,2 +1,3 @@
 martor template manually added in post app
 martor static files manually added in STATIC_ROOT
+Adding 'whitenoise.runserver_nostatic', to INSTALLED_APPS serves martor static files

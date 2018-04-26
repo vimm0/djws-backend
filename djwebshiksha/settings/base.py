@@ -11,6 +11,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # flat pages
     'django.contrib.sites',
@@ -50,13 +51,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
-
-# MIDDLEWARE = [
-#     # ...
-#     'debug_toolbar.middleware.DebugToolbarMiddleware',
-#     # ...
-# ]
-#
 
 LOGIN_URL = "/login/"
 ROOT_URLCONF = 'djwebshiksha.urls'
