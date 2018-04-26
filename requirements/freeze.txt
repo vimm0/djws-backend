@@ -1,0 +1,13 @@
+Django==1.9
+decorator==4.1.2
+django-cors-headers==2.1.0
+django-froala-editor==2.7.2
+djangorestframework==3.7.3
+ipdb==0.10.3
+ipython==6.2.1
+jedi==0.11.0
+parso==0.1.0
+pexpect==4.3.1
+psycopg2==2.7.3.2
+setupfiles==0.0.50
+SQLAlchemy==1.1.15

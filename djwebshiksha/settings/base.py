@@ -47,11 +47,15 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # flat pages
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    # debug_toolbar
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
+
+# MIDDLEWARE = [
+#     # ...
+#     'debug_toolbar.middleware.DebugToolbarMiddleware',
+#     # ...
+# ]
+#
 
 LOGIN_URL = "/login/"
 ROOT_URLCONF = 'djwebshiksha.urls'
@@ -79,14 +83,6 @@ AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.Us
                             {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
                             {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
                             ]
-# REST_FRAMEWORK = {
-#     # Use Django's standard `django.contrib.auth` permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ]
-# }
-
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "..", "static"),
@@ -109,7 +105,6 @@ FROALA_INCLUDE_JQUERY = False
 # Redactor settings
 REDACTOR_OPTIONS = {'lang': 'en'}
 REDACTOR_UPLOAD = 'uploads/'
-
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (

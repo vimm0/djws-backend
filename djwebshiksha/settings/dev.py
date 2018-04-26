@@ -15,7 +15,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 INSTALLED_APPS += (
     'debug_toolbar',
 )
-
+# MIDDLEWARE_CLASSES +=
 AUTH_PASSWORD_VALIDATORS = []
 DATABASES = {
     'default': {
@@ -24,5 +24,3 @@ DATABASES = {
     }
 }
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
-
-AUTH_PASSWORD_VALIDATORS = []
