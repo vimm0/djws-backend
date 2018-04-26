@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+import datetime
+
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
@@ -85,6 +87,9 @@ class Post(models.Model):
     @property
     def author(self):
         return str(self.user.username)
+
+    def future_post(self):
+        return datetime.date.today() < self.publish
 
     def get_markdown(self):
         content = self.content
