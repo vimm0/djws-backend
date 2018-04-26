@@ -91,6 +91,13 @@ class Post(models.Model):
     def future_post(self):
         return datetime.date.today() < self.publish
 
+    def tag_list(self):
+        return u", ".join(o.name for o in self.tags.all())
+
+    def tag_count(self):
+        tag_list = [o.name for o in self.tags.all()]
+        return len(tag_list)
+
     def get_markdown(self):
         content = self.content
         markdown_text = markdown(content)
