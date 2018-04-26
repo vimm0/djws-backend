@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'taggit',
     'rest_framework',
     'corsheaders',
+    'markdownx',
 
     # local apps
     'apps.accounts',
@@ -84,10 +85,6 @@ AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.Us
                             {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
                             ]
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "..", "static"),
-)
-
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -111,3 +108,54 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     '127.0.0.1:8000'
 )
+
+##################### MARKDOWN EDITOR ##########################
+
+# # Global martor settings
+# # Input: string boolean, `true/false`
+# MARTOR_ENABLE_CONFIGS = {
+#     'imgur': 'true',     # to enable/disable imgur/custom uploader.
+#     'mention': 'false',  # to enable/disable mention
+#     'jquery': 'true',    # to include/revoke jquery (require for admin default django)
+# }
+#
+# # To setup the martor editor with label or not (default is False)
+# MARTOR_ENABLE_LABEL = False
+#
+# # Imgur API Keys
+# MARTOR_IMGUR_CLIENT_ID = 'your-client-id'
+# MARTOR_IMGUR_API_KEY   = 'your-api-key'
+#
+# # Safe Mode
+# MARTOR_MARKDOWN_SAFE_MODE = True # default
+#
+# # Markdownify
+# MARTOR_MARKDOWNIFY_FUNCTION = 'martor.utils.markdownify' # default
+# MARTOR_MARKDOWNIFY_URL = '/martor/markdownify/' # default
+#
+# # Markdown extensions (default)
+# MARTOR_MARKDOWN_EXTENSIONS = [
+#     'markdown.extensions.extra',
+#     'markdown.extensions.nl2br',
+#     'markdown.extensions.smarty',
+#     'markdown.extensions.fenced_code',
+#
+#     # Custom markdown extensions.
+#     'martor.extensions.urlize',
+#     'martor.extensions.del_ins', # ~~strikethrough~~ and ++underscores++
+#     'martor.extensions.mention', # require for mention
+#     'martor.extensions.emoji',   # require for emoji
+# ]
+#
+# # Markdown Extensions Configs
+# MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
+#
+# # Markdown urls
+# MARTOR_UPLOAD_URL = '/martor/uploader/' # default
+# MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
+#
+# # Markdown Extensions
+# MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://assets-cdn.github.com/images/icons/emoji/' # default
+# MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/' # default (change this)
+#
+# CSRF_COOKIE_HTTPONLY = False

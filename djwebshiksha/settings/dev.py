@@ -2,10 +2,15 @@ from .base import *
 
 SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 
-DEBUG = True
-
+DEBUG = False
+"""
+Martor static files are not working in  DEBUG = True
+"""
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "..", "static"),
+)
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
@@ -15,7 +20,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 INSTALLED_APPS += (
     'debug_toolbar',
 )
-# MIDDLEWARE_CLASSES +=
 AUTH_PASSWORD_VALIDATORS = []
 DATABASES = {
     'default': {

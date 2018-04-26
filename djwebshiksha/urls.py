@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^comments/', include("apps.comments.urls", namespace='comments')),
+    url(r'^martor/', include('martor.urls')),
+
 ]
 
 urlpatterns += [
