@@ -1,26 +1,24 @@
+from django.db import models
 from django.contrib import admin
 
-# Register your models here.
-from django.db import models
-from .models import Post
-# from markdownx.admin import MarkdownxModelAdmin
 from martor.widgets import AdminMartorWidget
 
+from .models import Post
 
-# class PostModelAdmin(admin.ModelAdmin, MarkdownxModelAdmin):
-#     list_display = ["title", "updated", "timestamp"]
-#     list_display_links = ["updated"]
-#     list_editable = ["title"]
-#     list_filter = ["updated", "timestamp"]
-#     search_fields = ["title", "content"]
-#
-#     class Meta:
-#         model = Post
 
-class YourModelAdmin(admin.ModelAdmin):
+class PostModelAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminMartorWidget},
     }
 
+    list_display = ["title", "updated", "timestamp"]
+    list_display_links = ["updated"]
+    list_editable = ["title"]
+    list_filter = ["updated", "timestamp"]
+    search_fields = ["title", "content"]
 
-admin.site.register(Post, YourModelAdmin)
+    class Meta:
+        model = Post
+
+
+admin.site.register(Post, PostModelAdmin)
