@@ -3,6 +3,8 @@ from dj_database_url import config
 
 from .base import *
 
+ALLOWED_HOSTS = ['https://shikshalaya.herokuapp.com/', 'localhost']
+
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
