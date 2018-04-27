@@ -28,10 +28,8 @@ INSTALLED_APPS = [
     'markdownx',
 
     # local apps
-    'apps.accounts',
     'apps.comments',
-    'apps.posts',
-    'apps.web_sikhshalaya',
+    'apps.posts'
 ]
 
 SITE_ID = 1
@@ -53,7 +51,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 LOGIN_URL = "/login/"
-ROOT_URLCONF = 'djwebshiksha.urls'
+ROOT_URLCONF = 'shikshalaya.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djwebshiksha.wsgi.application'
+WSGI_APPLICATION = 'shikshalaya.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [{'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
                             {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },

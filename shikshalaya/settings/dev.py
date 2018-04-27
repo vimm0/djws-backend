@@ -2,7 +2,8 @@ from .base import *
 
 SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['https://shikshalaya.herokuapp.com/', 'localhost']
 """
 Martor static files are not working in  DEBUG = True
 In DEBUG = False, media is served by server (i.e. nginx, apache)
