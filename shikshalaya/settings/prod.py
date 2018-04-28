@@ -6,7 +6,7 @@ from .base import *
 ALLOWED_HOSTS = ['https://shikshalaya.herokuapp.com/', 'localhost']
 
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
@@ -14,7 +14,7 @@ DATABASES = {
 }
 # SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 
-DEBUG = False
+# DEBUG = False
 
 STATIC_URL = '/static/'
 

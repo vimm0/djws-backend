@@ -1,7 +1,7 @@
 from .base import *
 
 import dj_database_url
-from dj_database_url import config
+# from dj_database_url import config
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x')
 
