@@ -7,7 +7,7 @@ from .base import *
     DEBUG = os.environ.get('DEBUG', True) finds the DEBUG config from heroku vars, if not found fallback to TRUE
 """
 ######### STABLE #########
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 # SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x')
 
