@@ -1,8 +1,17 @@
 from .base import *
 
-SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
+import dj_database_url
+from dj_database_url import config
 
-DEBUG = True
+# SECRET_KEY = 'sm@g)(fbwdh5wc*xe@j++m9rh^uza5se9a57c5ptwkg*b@ki0x'
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=True, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+# DEBUG = True
 ALLOWED_HOSTS = ['https://shikshalaya.herokuapp.com/', 'localhost']
 """
 Martor static files are not working in  DEBUG = True
@@ -24,10 +33,10 @@ INSTALLED_APPS += (
     'debug_toolbar',
 )
 AUTH_PASSWORD_VALIDATORS = []
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
+#     }
+# }
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
