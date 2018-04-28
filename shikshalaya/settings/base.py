@@ -89,6 +89,13 @@ EMAIL_HOST_USER = 'vimmrana0@gmail.com'
 EMAIL_HOST_PASSWORD = '9815510732'
 EMAIL_PORT = 587
 
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
+
 FROALA_INCLUDE_JQUERY = False
 
 # Redactor settings

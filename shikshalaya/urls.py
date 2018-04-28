@@ -14,7 +14,7 @@ router.register(r'post', PostViewSet)
 router.register(r'comment', CommentViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^manager/', admin.site.urls),
     url(r'^v1/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
